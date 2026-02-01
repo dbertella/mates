@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Club Activities</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Club Activities</h1>
+      <p class="subtitle">Sunday Americano & Lunchtime Masterclass</p>
+      <label for="club-select" class="club-select-label">Club</label>
+      <select id="club-select" class="club-select" aria-label="Select club">
+        <option value="ilford">Ilford</option>
+        <option value="raketeer">Raketeer center</option>
+        <option value="beckton">Beckton</option>
+      </select>
+      <div id="filter-tabs" class="filter-tabs" role="tablist">
+        <button type="button" id="filter-both" class="filter-btn filter-btn--active" role="tab" aria-selected="true">Highlighted events</button>
+        <button type="button" id="filter-sunday" class="filter-btn" role="tab" aria-selected="false">Sunday Americano</button>
+        <button type="button" id="filter-lunchtime" class="filter-btn" role="tab" aria-selected="false">Lunchtime Masterclass</button>
+        <button type="button" id="filter-all-events" class="filter-btn" role="tab" aria-selected="false">All events</button>
+      </div>
+      <a href="#" id="website-link" class="website-link">Open website</a>
+      <details class="auth-token-details">
+        <summary class="auth-token-summary">Session token (optional, for same levels as website)</summary>
+        <div class="auth-token-row">
+          <input type="password" id="auth-token-input" class="auth-token-input" placeholder="Paste PadelMates JWT…" autocomplete="off" />
+          <button type="button" id="auth-token-save" class="auth-token-btn">Save</button>
+          <button type="button" id="auth-token-clear" class="auth-token-btn auth-token-btn--secondary">Clear</button>
+        </div>
+        <p id="auth-token-status" class="auth-token-status" aria-live="polite"></p>
+      </details>
+    </header>
+    <main>
+      <div id="loading" class="loading">Loading activities…</div>
+      <div id="error" class="error" hidden></div>
+      <input type="text" id="search-filter" class="search-input" placeholder="Filter by name…" aria-label="Filter by activity name" />
+      <div id="activities" class="activities" hidden></div>
+    </main>
+  </div>
+  <script src="renderer.js"></script>
+</body>
+</html>
